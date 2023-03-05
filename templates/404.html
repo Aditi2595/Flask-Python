@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>404</h1>
-    <h2>Page Not Found...Please try again!</h2>
+    {% block content %}
+        <h1>404</h1>
+        <h2>Page Not Found...Please try again!</h2>
+    {% endblock %}
 </body>
 </html>

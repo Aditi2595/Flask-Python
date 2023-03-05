@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello, {{first_name}}</h1>
-    <h2>This is a new beginning of my journey.</h2>
-    <p>{{stuff | safe}}</p>
-    <!--striptags remove/strip the html tags-->
-    <p>{{stuff | striptags}}</p>
-    <p>{{title_ex | title}}</p>
-    <h3>Favourite Pizza:</h3>
-    {% for toppings in favorite_pizza %}
-        {{toppings}} <br/>
-    {% endfor %}
-    <br><br>
-    {{favorite_pizza.0 | reverse}}
+    {% block content %}
+        <h1>Hello, {{first_name}}</h1>
+        <h2>This is a new beginning of my journey.</h2>
+        <p>{{stuff | safe}}</p>
+        <!--striptags remove/strip the html tags-->
+        <p>{{stuff | striptags}}</p>
+        <p>{{title_ex | title}}</p>
+        <h3>Favourite Pizza:</h3>
+        {% for toppings in favorite_pizza %}
+            {{toppings}} <br/>
+        {% endfor %}
+        <br><br>
+        {{favorite_pizza.0 | reverse}}
+    {% endblock %}
 </body>
 </html>
